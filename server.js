@@ -14,6 +14,7 @@ let options = {
 };
 
 //db connction
+mongoose.Promise = global.Promise;
 mongoose.connect(config.DBHost, options);
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
