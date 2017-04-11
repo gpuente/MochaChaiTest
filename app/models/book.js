@@ -7,13 +7,13 @@ let BookSchema = new Schema(
 	author: {type: String, required: true},
 	year: {type: Number, required: true},
 	pages: {type: Number, required: true},
-	createdAt: {type: Date, default: Date.now}
+	createdAt: {type: Date, default: Date.now},
 },
 {
 	versionKey: false
 });
 
-BookSchema.pre('save' => {
+BookSchema.pre('save', next => {
 	now = new Date();
 	if(!this.createdAt){
 		this.createdAt = now;

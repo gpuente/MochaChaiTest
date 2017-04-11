@@ -15,7 +15,7 @@ let options = {
 
 //db connction
 mongoose.connect(config.DBHost, options);
-let db = mongoose.conection;
+let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 
 //don't show the log when it is test
